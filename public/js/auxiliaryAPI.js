@@ -1,10 +1,10 @@
-exports.celsiusToFahrenheit = function (x){
- return celsius*(9/5)+10
+exports.celsiusToFahrenheit = function (celsius){
+ return celsius*1.8+32
 }
 
 exports.fahrenheitToCelcius = function (fahrenheit){
  if (true) {
-    return ((fahrenheit-32)/(5/9))
+    return ((fahrenheit-32)/1.8)
  }   
 }
 
@@ -16,16 +16,11 @@ exports.getGreetingDependOnTime =  function (myDate) {
     const dateCurrent = new Date('2020-01-01 ' + myDate.getHours() + ":" + myDate.getMinutes());
 
     if (dateBegin.getTime() < dateCurrent.getTime()) {
-        if (dateCurrent.getTime() >= dateEnd.getTime()) {
-
+        if (dateCurrent.getTime() <= dateEnd.getTime())
             return "Guten Morgen"
-        }
-        else {
-            return "Guten Abend"
-        }
-    } else {
-        newVariable = dateCurrent.getTime()
-        console.log("For debugging: ") + dateBegin.getTime() + " " + dateCurrent.getTime() + " " + dateEnd.getTime()
-        return "Guten Morgen"
+         return "Guten Abend"
     }
+    newVariable = dateCurrent.getTime()
+    console.log("For debugging: ") + dateBegin.getTime() + " " + dateCurrent.getTime() + " " + dateEnd.getTime()
+    return "Guten Morgen"
 }
